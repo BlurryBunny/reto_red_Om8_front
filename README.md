@@ -2,7 +2,7 @@
 Reto Red Om8 | Prueba Técnica - FrontEnd Developer - Flutter Developer 💻
 </h2> 
 
-## ¿Requisitos?
+## Requisitos
 
 1. Pantalla de Login/Registro (Autenticación con Firebase Auth)
 2. Navegación simple con animación (Bottom Nav Bar) con 2 Páginas:
@@ -34,9 +34,10 @@ Se trabajo con la siguiente estructura:
 * servicios 
 * componentes
 
-En el caso de la herramienta API fake store fue bastante sencilla utilizar con la documentación oficial de flutter y la que se provee en la pagina oficial.
+En el caso de la herramienta API fake store fue bastante sencilla utilizar con la documentación oficial de flutter y la que se provee en la página oficial.
 
-Anteriormente no habia tenido la oportunidad de trabajar con rest api por lo que investigue el como incluir llamados de peticiones de un servidor externo y mostrar los datos.
+Anteriormente no habia tenido la oportunidad de trabajar con rest api por lo que investigue el cómo incluir llamados de peticiones de un servidor externo y mostrar los datos.
 
 Se seguira trabajando en incorporar stipe en el carrito de compras para finalizar una transacción
+
 ```
