@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "742098792107",
+    "project_id": "retoredom8",
+    "storage_bucket": "retoredom8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742098792107:android:33e4f4ce63055dc6ba11ee",
+        "android_client_info": {
+          "package_name": "com.example.reto_red_om8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742098792107-d8oiv9j3tjk2nof0dj228hm2715mqklu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDluLR-VxmekVN8d3IBYzk5BNFyBvjF0ks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742098792107-d8oiv9j3tjk2nof0dj228hm2715mqklu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
