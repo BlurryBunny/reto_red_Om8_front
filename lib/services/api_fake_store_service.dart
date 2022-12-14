@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:reto_red_om8/models/CartUpdate.dart';
 import 'package:reto_red_om8/models/Product.dart';
 import 'package:http/http.dart' as http;
+import 'package:reto_red_om8/models/cartUpdate.dart';
 
 class ApiFakeStoreService {
   static const String baseUrl = 'https://fakestoreapi.com';
@@ -73,10 +73,8 @@ class ApiFakeStoreService {
   }
 
   Future<void> updateCart(int userId, int productId) async {
-    final carrito= CartUpdate(userId: userId, date: DateTime.now(), products: [
-      {'productId': productId, 'quantity': 1}
-    ]);
-
+    // final carrito= CartUpdate(userId: userId, date: DateTime.now(), products: []);
+    final carrito  = CartUpdate(userId: userId, date: DateTime.now(), products: [{'productId':productId,'quantity':1}]);
     final response = await http.put(Uri.parse('$baseUrl/carts/$userId'),body:json.encode(carrito.toJson()),headers:headers);
       
     if (response.statusCode == 200) {

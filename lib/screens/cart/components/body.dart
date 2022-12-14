@@ -3,10 +3,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:reto_red_om8/config_screen.dart';
 import 'package:reto_red_om8/models/Cart.dart';
-import 'package:reto_red_om8/models/CartUpdate.dart';
 import 'package:reto_red_om8/models/Product.dart';
 import 'package:reto_red_om8/services/api_fake_store_service.dart';
 
+import '../../../models/cartUpdate.dart';
 import 'cart_card.dart';
 
 class Body extends StatefulWidget {
@@ -32,21 +32,24 @@ class _BodyState extends State<Body> {
               }
 
               final CartUpdate products = snapshot.data!;
-              final jsonProduct= products.toJson();
+              final jsonProduct = products.toJson();
               return ListView.builder(
-                  itemCount: snapshot.data!.products.length ,
+                  itemCount: snapshot.data!.products!.length,
                   itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: FutureBuilder(
-                          future:
-                              service.getProduct(snapshot.data!.products[index][0]),
+                          future: service.getProduct(1),
+                          // service.getProduct(snapshot.data!.products[0]),
                           builder: (_, AsyncSnapshot<Product?> snapshot) {
                             if (!snapshot.hasData) {
                               return const CircularProgressIndicator();
                             }
 
                             final Product product_from_cart = snapshot.data!;
-                            final Cart product_card_data = Cart(product: product_from_cart, numOfItem: jsonProduct['products'][index][1].toDouble());
+                            final Cart product_card_data = Cart(
+                                product: product_from_cart,
+                                numOfItem: jsonProduct['products'][index][1]
+                                    .toDouble());
                             return Dismissible(
                               key: Key(product_from_cart.id.toString()),
                               direction: DismissDirection.endToStart,
@@ -69,7 +72,7 @@ class _BodyState extends State<Body> {
                                   ],
                                 ),
                               ),
-                              child: CartCard(productCard: product_card_data ),
+                              child: CartCard(productCard: product_card_data),
                             );
                           })));
             }));
